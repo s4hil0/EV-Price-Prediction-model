@@ -18,4 +18,5 @@ The project is trained using **RandomForestRegressor** and includes a simple **S
 - **r2_score 0.8810625358851204**
 
 
-![alt text](img.PNG)
+![alt text](img1.PNG)
+
