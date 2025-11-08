@@ -6,12 +6,11 @@ import path
 import joblib
 
 BASE_DIR = os.path.dirname(__file__)
-data_file_path = os.path.join(BASE_DIR, "data/raw/EV_cars.csv")
-print(BASE_DIR)
+data_file_path = os.path.join(BASE_DIR, "Week 1/data/raw/EV_cars.csv")
 data_file = pd.read_csv(data_file_path)
 
-encdr = joblib.load(os.path.join(BASE_DIR, "src/encoder.pkl"))
-model = joblib.load(os.path.join(BASE_DIR, "models/ev_pricepred_model.pkl"))
+encdr = joblib.load(os.path.join(BASE_DIR, "Week 1/src/encoder.pkl"))
+model = joblib.load(os.path.join(BASE_DIR, "Week 2/models/ev_pricepred_model.pkl"))
 
 st.title("EV Price Prediction")
 st.write("Enter the details below to predict the price")
@@ -26,9 +25,9 @@ acceleration = st.number_input("Acceleration 0-100km/h (sec)",min_value=0.0, max
 
 car_name = encdr.transform([car_name])
 
-button = st.button("Predict Price")
+button = st.button("Predict EV Price")
 if button:
   input_data = pd.DataFrame([[battery_capacity, car_name, efficiency, charging_speed, ev_range, top_speed, acceleration]], columns= ['Battery', 'Car_name', 'Efficiency', 'Fast_charge', 'Range', 'Top_speed', 'acceleration..0.100.'])
 
   price_prediction = model.predict(input_data)
-  st.write(f"Estimated EV Price: ${price_prediction * 1.16} ")
+  st.markdown(f"Estimated EV Price: **${price_prediction * 1.16}**")

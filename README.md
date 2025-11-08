@@ -1,4 +1,4 @@
-# EV Car Price Prediction(Visit: https://evpricepredict.streamlit.app)
+# EV Car Price Prediction (Visit: https://evpriceprediction.streamlit.app)
 
 A beginner-friendly machine learning project that predicts the price of Electric Vehicles (EVs).
 
@@ -17,4 +17,5 @@ The project is trained using **RandomForestRegressor** and includes a simple **S
 - **mean_square_error: 113437589.23394836**
 - **r2_score 0.8810625358851204**
 
-![alt text](img1.PNG)
+
+![alt text](img.PNG)
